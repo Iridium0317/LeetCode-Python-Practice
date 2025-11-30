@@ -1,5 +1,5 @@
 # LeetCode-Python-Practice
-This repository serves as a **coding journal** and a **sandbox** for my daily algorithmic practice.
+This repository serves as a coding journal and a sandbox for my daily algorithmic practice.
 
 ## Tech Stack
 - Language: Python 3
