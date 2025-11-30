@@ -14,7 +14,7 @@ This repository serves as a coding journal and a sandbox for my daily algorithmi
 
 ## Study Methodology: Spaced Repetition
 
-I treat this repository as a living journal. My workflow involves two stages:
+My workflow involves two stages:
 
 1.  **Implementation (Phase 1)**: 
     - Focus on solving the problem and passing test cases.
