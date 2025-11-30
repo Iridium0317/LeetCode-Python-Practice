@@ -16,11 +16,11 @@ This repository serves as a coding journal and a sandbox for my daily algorithmi
 
 My workflow involves two stages:
 
-1.  **Implementation (Phase 1)**: 
+1.  Implementation (Phase 1): 
     - Focus on solving the problem and passing test cases.
     - Initial commit with a working solution.
     
-2.  **Retrospection (Phase 2)**: 
+2.  Retrospection (Phase 2): 
     - Revisit the solution after a few days.
     - Write Takeaways and complexity analysis in the file's docstrings.
     - Refactor code to be more "Pythonic" or optimize time/space complexity.
