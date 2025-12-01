@@ -40,9 +40,7 @@ My workflow involves two stages:
 - Separate function definitions with two blank lines to clearly distinguish between them.
 - Add a signle blank line between logical sections within a functiohn to group related lines of code together.
 
-E.g. 
-
-
+```python
 def solve_problem(nums, target):
     # 逻辑板块 1: 边界检查 (Edge Case)
     if not nums:
@@ -62,5 +60,6 @@ def solve_problem(nums, target):
     # 逻辑板块 4: 返回结果 (Return)
     result.sort()
     return result
+```
 ---
 *Created by Claire*
