@@ -39,7 +39,9 @@ My workflow involves two stages:
 - Use snake_case for variable and function names
 - Separate function definitions with two blank lines to clearly distinguish between them.
 - Add a signle blank line between logical sections within a functiohn to group related lines of code together.
-
+- 变量定义 和 后续逻辑 之间空一行。
+- 预处理（Edge cases check） 和 主逻辑 之间空一行。
+- 核心算法（比如 while/for 循环） 结束后，和 return 语句 之间空一行。
 ```python
 def solve_problem(nums, target):
     if not nums:
