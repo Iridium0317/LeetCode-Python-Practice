@@ -42,22 +42,18 @@ My workflow involves two stages:
 
 ```python
 def solve_problem(nums, target):
-    # 逻辑板块 1: 边界检查 (Edge Case)
     if not nums:
         return []
 
-    # 逻辑板块 2: 初始化 (Initialization)
     result = []
     seen = set()
 
-    # 逻辑板块 3: 核心循环 (Core Logic)
     for x in nums:
         complement = target - x
         if complement in seen:
             result.append((x, complement))
         seen.add(x)
 
-    # 逻辑板块 4: 返回结果 (Return)
     result.sort()
     return result
 ```
