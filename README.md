@@ -194,7 +194,7 @@ counts = Counter(nums)
 
 ### Queued 队列 -> BFS 
 - FIFO 先进先出， 双端队列：两边都可进/出
-<img width="4000" height="873" alt="image" src="https://github.com/user-attachments/assets/766f4266-1c1c-408b-ba4f-a3f063936d8c" />
+- <img width="4000" height="873" alt="image" src="https://github.com/user-attachments/assets/766f4266-1c1c-408b-ba4f-a3f063936d8c" />
 - List 需要移动整个数组，增加或删除会比较慢 !!!严禁使用 list 配合 pop(0)
     - list.pop(0) 的时间复杂度是 O(N)
 
