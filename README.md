@@ -192,10 +192,124 @@ nums = [1, 2, 2, 3, 3, 3]
 counts = Counter(nums) 
 ```
 
-### Queued 队列
-- FIFO
-### Stack 栈
+### Queued 队列 -> BFS 
+- FIFO 先进先出， 双端队列：两边都可进/出
+<img width="4000" height="873" alt="image" src="https://github.com/user-attachments/assets/766f4266-1c1c-408b-ba4f-a3f063936d8c" />
+- List 需要移动整个数组，增加或删除会比较慢 !!!严禁使用 list 配合 pop(0)
+    - list.pop(0) 的时间复杂度是 O(N)
+
+- deque 双端 增加或删除非常快 max(q) #O(N), min(q) #O(N), len(q) #O(1)
+    - deque.popleft() 的时间复杂度是 O(1)
+    - from collections import deque,
+    - 先进先出 搭配使用 append(), popleft() 进队：q.append(x) 出队：val = q.popleft()  或 appendleft(), pop()
+    -  BFS模板： queue = collections.deque([root])
+    -  如果需要在队列/栈中频繁获取最大/最小值，不能直接用 max() 函数
+
+
+### Stack 栈 ->DFS
+- FILO 先进后出
+- 一般使用List .append(), .pop(), max() min() len()
+    - 进栈：stack.append(x)
+    - 出栈：val = stack.pop()
+    - 查看栈顶：stack[-1]
+
 ### Heap 堆
-### Tree 树
+大堆 Max Heap（最顶端的是最大值），小堆 Min Heap（最顶端的是最小值）
+前k个最大/小值
+
+- from heapq import heapify, heappush, heappop
+- heapify() #默认返回小堆 O(N)， heappush() #O(logN), heappop() #O(logN), nlargest() #前n个最大的值 O(NlogK), nsmallest()
+- 
+```python
+a = [1, 2, 3]
+heapify(a) #小堆
+heappush(a, 4) #[1, 2, 3, 4]
+heappop(a) #1 [2, 3, 4]
+nlargest(2,a) # [4, 3]
+nsmallest(2,a) # [2, 3]
+
+Python 没有大顶堆。必须把数字取反 (乘 -1) 存进去，取出来的时候再乘 -1 变回来
+import heapq
+# 想要大顶堆存 [1, 5, 3]
+max_heap = []
+heapq.heappush(max_heap, -1)
+heapq.heappush(max_heap, -5)
+heapq.heappush(max_heap, -3)
+
+# 现在的堆是 [-5, -3, -1] (实际上是小顶堆，但绝对值最大的是5)
+# 取出最大值：
+val = -heapq.heappop(max_heap) # 取出 -5，变回 5
+print(val)
+```
+### Tree 树 -> BFS, DFS, BST - Binary Search Tree
+- 重要概念：节点、根节点、叶子节点，
+    - 高度Height：该节点到叶子节点的最长路径 常用 后序遍历 Bottom-Up 拿到左右孩子高度，取 max(left, right) + 1，等左右孩子都算完了（左右），最后才能算你自己（中）
+      ```python
+      def get_height(node):
+        if not node: return 0
+        
+        # 1. 先去问左孩子 (左)
+        left_height = get_height(node.left)
+        
+        # 2. 再去问右孩子 (右)
+        right_height = get_height(node.right)
+        
+        # 3. 最后算我自己 (中)
+        # 我自己的高度 = 最高的那个孩子 + 我自己这1层
+        return max(left_height, right_height) + 1
+      ```
+    - 深度Depth：从根节点到该节点的边数 常用 前序遍历 Top-Down (往下传参数 depth + 1)
+      ```python
+        # 这里的 depth 是父节点传给我的
+        def get_depth(node, current_depth):
+            if not node: return
+            
+            # 1. 先处理自己（比如打印：我是第几层）
+            print(f"节点 {node.val} 的深度是 {current_depth}")
+            
+            # 2. 再往下传 (depth + 1)
+            get_depth(node.left, current_depth + 1)
+            get_depth(node.right, current_depth + 1)
+      ```
+  <img width="703" height="126" alt="image" src="https://github.com/user-attachments/assets/8926f8f1-a2a9-4ca2-a7e1-84a7e0a30d69" />
+
+    - 层：
+    - 树的高度：根节点的高度
+- 二叉树：每个节点最多有两个叉
+    - 满二叉树(perfect binary tree)：除了叶子节点，每个节点都有左右两个子节点，节点总数一定是2^k - 1
+    - 完全二叉树（complete binary tree): 上满下左，适合用数组/堆存储，下标关系 left = 2*i + 1, right = 2*i + 2
+- 二叉树的遍历：指的是根节点的处理时机
+- 二叉搜索树 (BST):  左 < 根 < 右。中序遍历 = 有序数组。
+  <img width="3161" height="1000" alt="image" src="https://github.com/user-attachments/assets/aa95a7c7-7d06-4b14-ba1e-9941c6a29717" />
+
+### 递归 vs 迭代 (Recursion vs Iteration) 
+#### 递归 Recursion
+```python
+def dfs(node):
+    if not node: return  # 终止条件 (底)
+    
+    # 逻辑处理...
+    
+    dfs(node.left)   # 甩锅给左边
+    dfs(node.right)  # 甩锅给右边
+```
+- 很像数学归纳法
+- 缺点 爆栈 (Stack Overflow)： 每次“甩锅”都要占用一点系统内存（系统栈）。如果层数太深（比如树有 10 万层），内存直接爆掉，程序崩溃。
+#### 迭代 Iteration
+```python
+# 手动维护一个栈，不依赖系统
+stack = [root] 
+while stack:
+    node = stack.pop()
+    # 逻辑处理...
+    if node.right: stack.append(node.right)
+    if node.left:  stack.append(node.left)
+```
+- 使用循环 (for 或 while)，stack 或者queue
+- 不会爆栈，但是容易出错
+- 数列递推 / 累加
+- 动态规划 (Tabulation): 其实就是 迭代 + 填表。
+思维：从最小的基础（Base Case）开始，填好 dp[0]，然后填dp[1]，一直填到 dp[n]
+。
 ---
 *Created by Claire*
