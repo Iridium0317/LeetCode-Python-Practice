@@ -126,20 +126,20 @@ islower
 
 ### List 数据类型：
 A list might have an int, float, str, or even another list inside of it. int, float and str are immutable.
-- 1. name_of_list = [initial_value] * size  2. name_of_list = [] #define an empty list
-  2. name_of_list.append(), name_of_list.remove() #只删除一次, x = name_of_list.pop() #删除最后一个元素并返回  name_of_list.pop(index)
-  3. list1.extend(list2) #把list2加到list1里     combined = list1 + list2
-  4. idx = name_of_list.index(element) #返回第一个element的index
-  5. name_of_list.insert(index, element)
-  6. max(name_of_list, min(name_of_list), sum(name_of_list), name_of_list.reverse(), name_of_list.clear() name_of_list[start:end]
-  7. b = [Expression for x in list]   b = [ExpressionA if Condition else ExpressionB for x in List]  b = [Expression for x in List if Condition] #遍历 list，只有满足条件的 x 才会被处理并塞进新列表。不满足的直接丢掉
+1. name_of_list = [initial_value] * size  2. name_of_list = [] #define an empty list
+2. name_of_list.append(), name_of_list.remove() #只删除一次, x = name_of_list.pop() #删除最后一个元素并返回  name_of_list.pop(index)
+3. list1.extend(list2) #把list2加到list1里     combined = list1 + list2
+4. idx = name_of_list.index(element) #返回第一个element的index
+5. name_of_list.insert(index, element)
+6. max(name_of_list, min(name_of_list), sum(name_of_list), name_of_list.reverse(), name_of_list.clear() name_of_list[start:end]
+7. b = [Expression for x in list]   b = [ExpressionA if Condition else ExpressionB for x in List]  b = [Expression for x in List if Condition] #遍历 list，只有满足条件的 x 才会被处理并塞进新列表。不满足的直接丢掉
  
 
 ### Dictionary
 - 数据类型：name_of_dict = {key1:value1,} 无序， Key必须唯一且不可变。 快速查找、映射、计数
 - 1. for key in dict.keys(): 2. for value in name_of_dict.values(): 3. for key, value in dict.items(): 4. dict.pop(key) #删除的是pair, dict.clear()  len(dict)   del dict[key] # 删除pair 但是不返回值
 - 1. keys must be immutable types; Values can be mutable or immutable
---  empty_dict = {}
+  2. empty_dict = {}
   3. final_grades = {} final_grades.[key1] = value1 
   4. visited = {} #这是空字典 visited = set() #这是空集合
   5. Nested Dict：处理复杂数据结构、图论（Graph）和树（Tree）的高频工具
