@@ -139,7 +139,7 @@ A list might have an int, float, str, or even another list inside of it. int, fl
 - 数据类型：name_of_dict = {key1:value1,} 无序， Key必须唯一且不可变。 快速查找、映射、计数
 - 1. for key in dict.keys(): 2. for value in name_of_dict.values(): 3. for key, value in dict.items(): 4. dict.pop(key) #删除的是pair, dict.clear()  len(dict)   del dict[key] # 删除pair 但是不返回值
 - 1. keys must be immutable types; Values can be mutable or immutable
--- 2. empty_dict = {}
+--  empty_dict = {}
   3. final_grades = {} final_grades.[key1] = value1 
   4. visited = {} #这是空字典 visited = set() #这是空集合
   5. Nested Dict：处理复杂数据结构、图论（Graph）和树（Tree）的高频工具
