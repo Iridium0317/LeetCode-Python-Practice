@@ -158,7 +158,7 @@ tree['user1']['score'] = 100
 
 print(tree['user1']['address']['city']) # 输出 LA
 ```
-    6. .get()：“如果找不到这个 Key，别返回 None，给我返回一个 0 (或者其他默认值)。”  count = my_dict.get(key, 0)
+ 6. .get()：“如果找不到这个 Key，别返回 None，给我返回一个 0 (或者其他默认值)。”  count = my_dict.get(key, 0)
     <img width="602" height="407" alt="image" src="https://github.com/user-attachments/assets/9c5d1436-3d96-4ef9-83be-57e5bb45cf83" />
 
 ### Tuple () 
