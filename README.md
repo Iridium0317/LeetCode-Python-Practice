@@ -188,5 +188,11 @@ from collections import Counter
 nums = [1, 2, 2, 3, 3, 3]
 counts = Counter(nums) 
 ```
+
+### Queued 队列
+- FIFO
+### Stack 栈
+### Heap 堆
+### Tree 树
 ---
 *Created by Claire*
