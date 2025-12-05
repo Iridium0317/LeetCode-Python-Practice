@@ -114,7 +114,7 @@ s = "Hello World"
 len()
 s.count("H") #1
 isupper()
-islower
+islower()
 ```
 
 ### Array
