@@ -63,7 +63,7 @@ def solve_problem(nums, target):
 - 逗号后面要加空格 ✅ nums = [1, 2, 3]
 - 专业写法：
 ```python
-for i, num in enumerate(nums):
+for i, num in enumerate(nums): #适用于所有可迭代对象，
     print(i, num)
 
 # 做反转链表、排序或者数组内部交换元素时，千万别像 Java/C 那样搞个 temp 变量
@@ -106,7 +106,7 @@ for val1, val2 in zip(list1, list2):
 
 <img width="1566" height="999" alt="image" src="https://github.com/user-attachments/assets/9a42679f-04fa-4352-a52f-b8f702589328" />
 
-
+### 常用的函数
 ### String
 - isupper(), islower(), isdigit() # 全为数字, s.lower() #全变小写, s.upper(), s.strip() #去除前后空格, s.lstrip #去除左边空格, s.rstrip(), swapcase() #大写变小写，小写变大写, replace(old, new) # s.replace("l","E"), split()
 ```python
@@ -202,8 +202,8 @@ counts = Counter(nums)
     - deque.popleft() 的时间复杂度是 O(1)
     - from collections import deque,
     - 先进先出 搭配使用 append(), popleft() 进队：q.append(x) 出队：val = q.popleft()  或 appendleft(), pop()
-    -  BFS模板： queue = collections.deque([root])
-    -  如果需要在队列/栈中频繁获取最大/最小值，不能直接用 max() 函数
+    - BFS模板： queue = collections.deque([root])
+    - 如果需要在队列/栈中频繁获取最大/最小值，不能直接用 max() 函数
 
 
 ### Stack 栈 ->DFS
@@ -211,7 +211,7 @@ counts = Counter(nums)
 - 一般使用List .append(), .pop(), max() min() len()
     - 进栈：stack.append(x)
     - 出栈：val = stack.pop()
-    - 查看栈顶：stack[-1]
+    - 查看栈顶（栈里面的最后一个元素）：stack[-1]
 
 ### Heap 堆
 大堆 Max Heap（最顶端的是最大值），小堆 Min Heap（最顶端的是最小值）
