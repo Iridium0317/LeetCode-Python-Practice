@@ -154,7 +154,11 @@ for val1, val2 in zip(list1, list2):
 | **双数组遍历** | `for a, b in zip(list1, list2):` | 同时遍历两个数组。 |
 | **倒序循环** | `range(n-1, -1, -1)` | 从后往前遍历（DP 或 栈题目常用）。 |
 
-
+| 符号 | 例子 | 作用 |
+| :--- | :--- | :--- |
+| **`//`** 整除 (Floor Div) | `7 // 2 = 3` | 用于“砍掉尾巴”或“求行号”。 |
+| **`%`** 取模 (Mod) | `7 % 2 = 1` | 取余数，用于“判断奇偶”、“循环下标”、“取个位数”。 |
+| **`divmod`** 同时求 | `divmod(7, 2) = (3, 1)` | 两个一起求，写代码更简洁。 |
 - 必须用 for 循环, 当你明确知道要循环多少次，或者要遍历一个容器（数组、字符串、链表）时。
 - 必须用 while 循环, 当你不知道要循环多少次，只知道停止条件时。
 - Nonetype: x = None. The **None** value can serve as a sort of placeholder for when we need to create a variable before we know what value it needs to have. 先挖个坑，之后再填上
