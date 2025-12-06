@@ -21,7 +21,7 @@ Explanation: There is no way to reorder the elements to obtain an arithmetic pro
 *   2 <= arr.length <= 1000
 *   -106 <= arr[i] <= 106
 
-**My Understanding**
+## My Understanding
 
 **Solution**
 ```python
@@ -46,8 +46,11 @@ class Solution:
 #         return True            
 ```
 **Note**
+
 Time Complexity: $O(N log N)$
 Space Complexity: $O(N)$
+
+
 --
 # 2485. Find the Pivot Integer
 
@@ -78,7 +81,7 @@ Explanation: It can be proved that no such integer exist.
 *   1 <= n <= 1000
 
 
-**My Understanding**
+## My Understanding
 
 **Solution**
 
@@ -98,6 +101,7 @@ class Solution:
 **Note**
 Time Complexity: $O(1)$
 Space Complexity: $O(1)$
+
 --
 # 9. Palindrome Number
 
@@ -124,7 +128,7 @@ Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 
 **Constraints:**
 *   -231 <= x <= 231 - 1
-**My Understanding**
+## My Understanding
 
 **Solution**
 
@@ -163,11 +167,15 @@ class Solution:
 ```
 
 **Note**
+
 Solution1: 
 Time Complexity: $O(\log_{10} x)$
 Space Complexity: $O(1)$
+
 Solution2:
 Time Complexity: $O(\log_{10} x)$
 Space Complexity: $O(\log_{10} x)$
+
+
 --
 
