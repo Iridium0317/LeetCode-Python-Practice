@@ -47,8 +47,8 @@ class Solution:
 ```
 **Note**
 
-Time Complexity: $O(N log N)$
-Space Complexity: $O(N)$
+*   Time Complexity: $O(N log N)$
+*   Space Complexity: $O(N)$
 
 
 --
@@ -99,8 +99,8 @@ class Solution:
 ```
 
 ### Note
-Time Complexity: $O(1)$
-Space Complexity: $O(1)$
+*   Time Complexity: $O(1)$
+*   Space Complexity: $O(1)$
 
 --
 # 9. Palindrome Number
@@ -169,12 +169,12 @@ class Solution:
 ### Note
 
 Solution1: 
-Time Complexity: $O(\log_{10} x)$
-Space Complexity: $O(1)$
+*   Time Complexity: $O(\log_{10} x)$
+*   Space Complexity: $O(1)$
 
 Solution2:
-Time Complexity: $O(\log_{10} x)$
-Space Complexity: $O(\log_{10} x)$
+*   Time Complexity: $O(\log_{10} x)$
+*   Space Complexity: $O(\log_{10} x)$
 
 
 --
