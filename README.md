@@ -102,18 +102,18 @@ for val1, val2 in zip(list1, list2):
 ### 1. 列表 / 数组 (List) —— 最常用
 | 函数/语法 | 用法示例 | 时间复杂度 | 面试场景 / 备注 |
 | :--- | :--- | :--- | :--- |
-| **`sort()`** | `nums.sort()` | $O(N \log N)$ | **原地排序**，不返还新数组。改变原有的顺序。 |
-| **`sorted()`** | `res = sorted(nums)` | $O(N \log N)$ | **返回新数组**，原数组不变。 |
+| **`sort()`** | `nums.sort()` | $O(N \log N)$ | 原地排序，不返还新数组。改变原有的顺序。 |
+| **`sorted()`** | `res = sorted(nums)` | $O(N \log N)$ | 返回新数组，原数组不变。 |
 | **`append()`** | `stack.append(x)` | $O(1)$ | 栈顶入栈。 |
 | **`pop()`** | `x = stack.pop()` | $O(1)$ | 栈顶出栈（删除最后一个）。 |
 | **切片反转** | `nums[::-1]` | $O(N)$ | 快速反转数组或字符串。 |
 | **初始化** | `arr = [0] * n` | $O(N)$ | 初始化固定长度的数组（如 DP 数组）。 |
-| **二维数组** | `[[0]*n for _ in range(m)]` | $O(M \cdot N)$ | **千万别写** `[[0]*n]*m` (那是浅拷贝 Bug)。 |
+| **二维数组** | `[[0]*n for _ in range(m)]` | $O(M \cdot N)$ | 千万别写 `[[0]*n]*m` (那是浅拷贝 Bug)。 |
 
 ### 2. 字符串 (String) —— 不可变
 | 函数/语法 | 用法示例 | 时间复杂度 | 面试场景 / 备注 |
 | :--- | :--- | :--- | :--- |
-| **`join()`** | `"".join(list)` | $O(N)$ | **必背**。将列表转为字符串。比 `+=` 快得多。 |
+| **`join()`** | `"".join(list)` | $O(N)$ | 将列表转为字符串。比 `+=` 快得多。 |
 | **`split()`** | `s.split(" ")` | $O(N)$ | 将字符串按空格切成列表。 |
 | **`strip()`** | `s.strip()` | $O(N)$ | 去除首尾空格。 |
 | **`isdigit()`** | `char.isdigit()` | $O(1)$ | 判断是否为数字字符 '0'-'9'。 |
@@ -130,18 +130,18 @@ for val1, val2 in zip(list1, list2):
 | **`items()`** | `d.items()` | $O(N)$ | 同时获取键和值：`for k, v in d.items():` |
 | **`set()`** | `s = set(nums)` | $O(N)$ | 数组去重 / 快速查找。 |
 | **`add()`** | `s.add(x)` | $O(1)$ | 往集合里加元素。 |
-| **`x in s`** | `if x in visited:` | $O(1)$ | **哈希查找核心**。比 list 查找快得多。 |
+| **`x in s`** | `if x in visited:` | $O(1)$ | 哈希查找核心。比 list 查找快得多。 |
 
 ### 4. 队列 & 堆 (Collections & Heapq) —— 需 import
 | 模块 | 函数/语法 | 时间复杂度 | 面试场景 / 备注 |
 | :--- | :--- | :--- | :--- |
-| **Deque** | `q = deque()` | - | **双端队列**，BFS 必备。 |
+| **Deque** | `q = deque()` | - | 双端队列，BFS 必备。 |
 | | `q.append(x)` | $O(1)$ | 右进。 |
-| | `q.popleft()` | $O(1)$ | **左出**（千万别用 list 的 pop(0)）。 |
+| | `q.popleft()` | $O(1)$ | 左出（千万别用 list 的 pop(0)）。 |
 | **Heapq** | `heapify(list)` | $O(N)$ | 把乱序数组变成堆。 |
 | | `heappush(h, x)` | $O(\log N)$ | 往堆里加元素。 |
 | | `heappop(h)` | $O(\log N)$ | 弹出最小值。 |
-| **Counter** | `Counter(nums)` | $O(N)$ | **词频统计神器**。返回一个字典。 |
+| **Counter** | `Counter(nums)` | $O(N)$ | 词频统计神器。返回一个字典。 |
 | **Defaultdict**| `d = defaultdict(int)` | $O(1)$ | 访问不存在的 key 不会报错，自动赋默认值 0。 |
 
 ### 5. 数学 & 循环 (Math & Loop)
@@ -150,9 +150,10 @@ for val1, val2 in zip(list1, list2):
 | **无穷大** | `float('inf')`, `float('-inf')` | 初始化最小值/最大值时用。 |
 | **绝对值** | `abs(-5)` -> 5 | 碰撞问题、距离计算。 |
 | **商和余** | `divmod(10, 3)` -> `(3, 1)` | 同时拿到商和余数。 |
-| **带索引遍历** | `for i, x in enumerate(nums):` | **必背**。不要写 `range(len())` 了。 |
+| **带索引遍历** | `for i, x in enumerate(nums):` | 不要写 `range(len())` 了。 |
 | **双数组遍历** | `for a, b in zip(list1, list2):` | 同时遍历两个数组。 |
 | **倒序循环** | `range(n-1, -1, -1)` | 从后往前遍历（DP 或 栈题目常用）。 |
+
 
 - 必须用 for 循环, 当你明确知道要循环多少次，或者要遍历一个容器（数组、字符串、链表）时。
 - 必须用 while 循环, 当你不知道要循环多少次，只知道停止条件时。
