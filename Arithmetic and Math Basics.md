@@ -210,6 +210,7 @@ class Solution:
         if x == 0:
             return 0
         # 在python中负数除法是向下取整，-123 // 10 == -13
+        #取符号
         sign = 1
         if x < 0:
             sign = -1
