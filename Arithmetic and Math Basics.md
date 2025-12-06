@@ -51,7 +51,7 @@ class Solution:
 *   Space Complexity: $O(N)$
 
 
---
+---
 # 2485. Find the Pivot Integer
 
 **Problem**  
@@ -102,7 +102,7 @@ class Solution:
 *   Time Complexity: $O(1)$
 *   Space Complexity: $O(1)$
 
---
+---
 # 9. Palindrome Number
 
 **Problem**  
@@ -177,5 +177,5 @@ Solution2:
 *   Space Complexity: $O(\log_{10} x)$
 
 
---
+---
 
