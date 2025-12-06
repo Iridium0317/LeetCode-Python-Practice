@@ -23,7 +23,7 @@ Explanation: There is no way to reorder the elements to obtain an arithmetic pro
 
 ## My Understanding
 
-**Solution**
+### Solution
 ```python
 class Solution:
     def canMakeArithmeticProgression(self, arr: List[int]) -> bool:
@@ -83,7 +83,7 @@ Explanation: It can be proved that no such integer exist.
 
 ## My Understanding
 
-**Solution**
+### Solution
 
 ```python
 class Solution:
@@ -98,7 +98,7 @@ class Solution:
         # return int(x) if x.is_integer() else -1
 ```
 
-**Note**
+### Note
 Time Complexity: $O(1)$
 Space Complexity: $O(1)$
 
@@ -130,7 +130,7 @@ Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 *   -231 <= x <= 231 - 1
 ## My Understanding
 
-**Solution**
+### Solution
 
 ```python
 class Solution:
@@ -166,7 +166,7 @@ class Solution:
         # return s == s[::-1]
 ```
 
-**Note**
+### Note
 
 Solution1: 
 Time Complexity: $O(\log_{10} x)$
