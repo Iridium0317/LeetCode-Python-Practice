@@ -205,8 +205,8 @@ return dummy.next
     while curr and curr.next: 
         if curr.next.val == 1:
             ...
-    ```
---------
+  ```
+---
 ### List 数据类型：
 A list might have an int, float, str, or even another list inside of it. int, float and str are immutable.
 1. name_of_list = [initial_value] * size  2. name_of_list = [] #define an empty list
@@ -392,7 +392,6 @@ while stack:
 - 不会爆栈，但是容易出错
 - 数列递推 / 累加
 - 动态规划 (Tabulation): 其实就是 迭代 + 填表。
-思维：从最小的基础（Base Case）开始，填好 dp[0]，然后填dp[1]，一直填到 dp[n]
-。
+思维：从最小的基础（Base Case）开始，填好 dp[0]，然后填dp[1]，一直填到 dp[n]。
 ---
 *Created by Claire*
