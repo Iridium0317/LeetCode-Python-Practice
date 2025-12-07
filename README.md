@@ -184,7 +184,10 @@ islower()
 
 ### LinkedList
 <img width="1922" height="1000" alt="image" src="https://github.com/user-attachments/assets/bcd711d2-1213-4e49-ac78-7fbdaa823a79" />
-虚拟头结点 Dummy Head：使所有节点（包括头结点）都变成中间节点
+删除节点：找到被删节点的前一个节点 (Prev)，让 Prev 直接指向下下个节点。
+
+虚拟头结点 Dummy Head：让头结点也被指，所有的节点都变成中间节点。这样，每次写增删改查，就不用特殊处理头结点。
+
 
 ```python
 # 1. 创建一个假的头，指像真正的 head
@@ -194,6 +197,7 @@ dummy = ListNode(next=head)
 curr = dummy
 
 # 3. ... 执行各种增删改查 ...
+curr.next = curr.next.next
 
 # 4. 最后返回 dummy.next
 return dummy.next
