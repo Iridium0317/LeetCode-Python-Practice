@@ -206,7 +206,7 @@ return dummy.next
         if curr.next.val == 1:
             ...
     ```
----
+--------
 ### List 数据类型：
 A list might have an int, float, str, or even another list inside of it. int, float and str are immutable.
 1. name_of_list = [initial_value] * size  2. name_of_list = [] #define an empty list
