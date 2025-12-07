@@ -99,7 +99,8 @@ for val1, val2 in zip(list1, list2):
 ```
 
 ## Study Notes:
-### 1. 列表 / 数组 (List) —— 最常用
+### 常用的函数
+#### 1. 列表 / 数组 (List) —— 最常用
 | 函数/语法 | 用法示例 | 时间复杂度 | 面试场景 / 备注 |
 | :--- | :--- | :--- | :--- |
 | `sort()` | `nums.sort()` | $O(N \log N)$ | 原地排序，不返还新数组。改变原有的顺序。 |
@@ -110,7 +111,7 @@ for val1, val2 in zip(list1, list2):
 | 初始化 | `arr = [0] * n` | $O(N)$ | 初始化固定长度的数组（如 DP 数组）。 |
 | 二维数组 | `[[0]*n for _ in range(m)]` | $O(M \cdot N)$ | 千万别写 `[[0]*n]*m` (那是浅拷贝 Bug)。 |
 
-### 2. 字符串 (String) —— 不可变
+#### 2. 字符串 (String) —— 不可变
 | 函数/语法 | 用法示例 | 时间复杂度 | 面试场景 / 备注 |
 | :--- | :--- | :--- | :--- |
 | `join()` | `"".join(list)` | $O(N)$ | 将列表转为字符串。比 `+=` 快得多。 |
@@ -121,7 +122,7 @@ for val1, val2 in zip(list1, list2):
 | `ord()` | `ord('a')` -> 97 | $O(1)$ | 字符转 ASCII 码。 |
 | `chr()` | `chr(97)` -> 'a' | $O(1)$ | ASCII 码转字符。 |
 
-### 3. 字典 (Dict) & 集合 (Set) —— 哈希表
+#### 3. 字典 (Dict) & 集合 (Set) —— 哈希表
 | 函数/语法 | 用法示例 | 时间复杂度 | 面试场景 / 备注 |
 | :--- | :--- | :--- | :--- |
 | `get()` | `d.get(key, 0)` | $O(1)$ | 安全取值。如果你不确定 key 存不存在，用这个。 |
@@ -132,7 +133,7 @@ for val1, val2 in zip(list1, list2):
 | `add()` | `s.add(x)` | $O(1)$ | 往集合里加元素。 |
 | `x in s` | `if x in visited:` | $O(1)$ | 哈希查找核心。比 list 查找快得多。 |
 
-### 4. 队列 & 堆 (Collections & Heapq) —— 需 import
+#### 4. 队列 & 堆 (Collections & Heapq) —— 需 import
 | 模块 | 函数/语法 | 时间复杂度 | 面试场景 / 备注 |
 | :--- | :--- | :--- | :--- |
 | Deque | `q = deque()` | - | 双端队列，BFS 必备。 |
@@ -144,7 +145,7 @@ for val1, val2 in zip(list1, list2):
 | Counter | `Counter(nums)` | $O(N)$ | 词频统计神器。返回一个字典。 |
 | Defaultdict| `d = defaultdict(int)` | $O(1)$ | 访问不存在的 key 不会报错，自动赋默认值 0。 |
 
-### 5. 数学 & 循环 (Math & Loop)
+#### 5. 数学 & 循环 (Math & Loop)
 | 函数/语法 | 用法示例 | 面试场景 / 备注 |
 | :--- | :--- | :--- |
 | 无穷大 | `float('inf')`, `float('-inf')` | 初始化最小值/最大值时用。 |
@@ -166,7 +167,7 @@ for val1, val2 in zip(list1, list2):
 
 <img width="1566" height="999" alt="image" src="https://github.com/user-attachments/assets/9a42679f-04fa-4352-a52f-b8f702589328" />
 
-### 常用的函数
+---
 ### String
 - isupper(), islower(), isdigit() # 全为数字, s.lower() #全变小写, s.upper(), s.strip() #去除前后空格, s.lstrip #去除左边空格, s.rstrip(), swapcase() #大写变小写，小写变大写, replace(old, new) # s.replace("l","E"), split()
 ```python
@@ -183,7 +184,27 @@ islower()
 
 ### LinkedList
 <img width="1922" height="1000" alt="image" src="https://github.com/user-attachments/assets/bcd711d2-1213-4e49-ac78-7fbdaa823a79" />
+- 虚拟头结点 Dummy Head：使所有节点（包括头结点）都变成中间节点
+```python
+# 1. 创建一个假的头，指像真正的 head
+dummy = ListNode(next=head) 
 
+# 2. 用一个 curr 指针去跑，永远不要动 dummy
+curr = dummy
+
+# 3. ... 执行各种增删改查 ...
+
+# 4. 最后返回 dummy.next
+return dummy.next
+```
+- 最后一个节点的 next 是 None
+  ```python
+    # 必须先判断 curr.next 存在，才能去摸它的 val
+    while curr and curr.next: 
+        if curr.next.val == 1:
+            ...
+    ```
+---
 ### List 数据类型：
 A list might have an int, float, str, or even another list inside of it. int, float and str are immutable.
 1. name_of_list = [initial_value] * size  2. name_of_list = [] #define an empty list
