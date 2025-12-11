@@ -185,10 +185,14 @@ islower()
 ### LinkedList
 <img width="1922" height="1000" alt="image" src="https://github.com/user-attachments/assets/bcd711d2-1213-4e49-ac78-7fbdaa823a79" />
 默认全是单链表，每个节点只知道后面是谁，不知道前面是谁。 一个节点可以被无数个变量抓住。
+
+| 操作 | 复杂度 |
+| :--- | :--- |
 | 访问 | $O(N)$ |
 | 搜索 | $O(N)$ |
 | 插入 | $O(1)$ |
 | 删除 | $O(1)$ |
+
 删除节点：找到被删节点的前一个节点 (Prev)，让 Prev 直接指向下下个节点。
 
 ```python
