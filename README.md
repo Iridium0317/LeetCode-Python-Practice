@@ -244,6 +244,12 @@ A list might have an int, float, str, or even another list inside of it. int, fl
 数据类型：name_of_dict = {key1:value1,} 无序， Key必须唯一且不可变。 快速查找、映射、计数
 1. for key in dict.keys(): 2. for value in name_of_dict.values(): 3. for key, value in dict.items(): 4. dict.pop(key) #删除的是pair, dict.clear()  len(dict)   del dict[key] # 删除pair 但是不返回值
 
+| 操作 | 平均情况 | 最坏情况 | 为什么最坏是 O(N)? |
+| :--- | :--- | :--- | :--- |
+| 访问 | $O(1)$ | $O(N)$ | 哈希冲突 Collision。所有数据挤在同一个坑里。|
+| 搜索 | $O(1)$ | $O(N)$ | 同上 |
+| 插入 | $O(1)$ | $O(N)$ | 同上，或者出发了扩容resize |
+| 删除 | $O(1)$ | $O(N)$ | 同上 |
    
 1. keys must be immutable types; Values can be mutable or immutable
 2. empty_dict = {}
@@ -296,6 +302,7 @@ from collections import Counter
 nums = [1, 2, 2, 3, 3, 3]
 counts = Counter(nums) 
 ```
+
 
 ### Queued 队列 -> BFS 
 - FIFO 先进先出， 双端队列：两边都可进/出
